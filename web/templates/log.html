@@ -1,0 +1,86 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AnO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<style>
+    
+    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+
+</style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+{%if form.errors%}
+{{form.errors}}
+{%endif%}
+
+<form action="" method="post">
+      {%csrf_token%}
+  <div class="imgcontainer">
+    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+
+
+
+ <div class="card signup_v4 mb-30">
+    <div class="card-body">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="login-tab" data-toggle="tab" href="{%url 'signin'%}" role="tab" aria-controls="login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="register-tab" data-toggle="tab" href="{%url 'signup'%}" role="tab" aria-controls="register" aria-selected="false">Register</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Login</h4>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="uname">Your Username</label>
+                            <input type="text" placeholder="Enter Username" name="username" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="psw">Your Password</label>
+                            <input type="password" placeholder="Enter Password" name="password" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <div class="custom-checkbox d-block">
+                                    <label class="custom-control custom-checkbox checkbox-lg">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <div class="custom-control-label" for="customCheck1">Remember Password</div>
+                                    </label>
+                                </div>
+                                <a href="#" target="_blank">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-3">
+                        <button class="btn btn-primary full-width" type="submit">Login</button>
+                    </div>
+                </form>
+               
+                 
+            </div>
+        </div>
+    </div>
+ </div>
+
+</form>
+
+</body>
+</html>
